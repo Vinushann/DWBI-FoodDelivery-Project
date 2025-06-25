@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="FoodDelivery-DW"
+  DTS:DTSID="{3B01972A-C034-46F8-A35A-1A78B7728FD2}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Initial Catalog=FoodDelivery_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-FoodDelivery-Data-Warehouse-Project-{3B01972A-C034-46F8-A35A-1A78B7728FD2}Data Connection5;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
