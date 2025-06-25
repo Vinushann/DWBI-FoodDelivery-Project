@@ -1,89 +1,78 @@
-# 📊 Data Warehouse and OLAP Reporting Solution
+# Data Warehouse and OLAP Reporting Solution
 
-This repository contains two major components:
+This repository contains two parts of a complete business intelligence solution using SQL Server technologies. The project includes the design and development of a scalable data warehouse and the creation of an OLAP cube for multidimensional analysis and reporting.
 
-1. **Scalable Data Warehouse Design and ETL Pipeline**
-2. **OLAP Cube Implementation and Multidimensional Analysis**
+## Part 1: Data Warehouse Design and ETL Development
 
-These components demonstrate how to build and analyze a business intelligence solution using SQL Server technologies.
+### Overview
 
----
+The first part focuses on building a scalable data warehouse for a food delivery business scenario. It includes:
 
-## 🏗️ Part 1: Data Warehouse Design and ETL Development
+- Designing a snowflake schema with fact and dimension tables.
+- Extracting data from multiple sources such as SQL tables and CSV files.
+- Performing data cleaning, validation, and transformation using SQL Server Integration Services (SSIS).
+- Implementing Slowly Changing Dimensions (SCD Type 2) to track historical changes in customer and restaurant data.
 
-### ✅ Key Highlights
+### Components
 
-- Designed a **Snowflake Schema** for a food delivery business scenario.
-- Used a mix of **CSV files** and **SQL tables** as source data (customers, delivery staff, food items, payments, and orders).
-- Built the data pipeline using **SQL Server Integration Services (SSIS)** with:
-  - **Staging Layer**: raw data is loaded and stored temporarily.
-  - **Transformation Layer**: includes trimming, null handling, data validation.
-  - **Data Warehouse Layer**: fact and dimension tables created with historical tracking.
-
-### 🧱 Dimensions and Fact Table
-
-- **FactOrders**: Stores transactional data (order amount, quantity, discount).
-- Dimensions:
+- **Fact Table**: Stores order transactions including quantity, price, discount, and calculated total.
+- **Dimension Tables**:
   - Customer
   - Delivery Person
-  - Food Item → Subcategory → Category
+  - Food (linked to Subcategory and Category)
   - Restaurant
   - Payment Method
-  - Date
+  - Date (with hierarchy levels: day, month, quarter, year)
 
-### 🔁 Special Features
+### ETL Features
 
-- Implemented **Slowly Changing Dimensions (Type 2)** for Customer and Restaurant history tracking.
-- Added an **accumulating snapshot fact** to monitor order lifecycle (created vs. completed time).
-- Included transformation logic for cleaning and enriching data.
+- Use of staging tables to isolate raw data before transformation.
+- Lookup and validation tasks to ensure data quality.
+- Derived columns for calculations and transformations.
+- Accumulating snapshot fact table to track order completion times.
 
----
+## Part 2: OLAP Cube and Multidimensional Reporting
 
-## 📦 Part 2: OLAP Cube and Analysis Reports
+### OLAP Cube Development
 
-### 🔧 OLAP Cube Setup
+The second part involves creating an OLAP cube using SQL Server Analysis Services (SSAS). It connects to the previously built data warehouse and enables advanced analysis.
 
-- Developed a cube using **SQL Server Analysis Services (SSAS)**.
-- Connected to the previously built data warehouse.
-- Defined measures like:
+- Measures included in the cube:
   - Final Order Amount
   - Order Count
-  - Delivery Time
+  - Delivery Time in hours
+- Role-playing dimensions used to separate order date and delivery date.
+- Custom hierarchies created in key dimensions for easier drill-down:
+  - Date: Year → Quarter → Month
+  - Food: Category → Name
+  - Restaurant: City → Name
 
-- Included dimensions:
-  - Food hierarchy (Category → Item)
-  - Restaurant location (City → Name)
-  - Time (Order Date and Delivery Date as role-playing dimensions)
+### OLAP Operations Demonstrated
 
-### 🔎 OLAP Operations Performed
+Using Excel and Power BI, the following OLAP operations were performed:
 
-Using **Excel** and **Power BI**, the following operations were demonstrated:
+- **Roll-Up**: Summarizing total sales by year.
+- **Drill-Down**: Breaking down yearly sales into months.
+- **Slice**: Filtering data by a single dimension such as city.
+- **Dice**: Filtering data using multiple dimensions (e.g., city and payment method).
+- **Pivot**: Switching rows and columns to view data from different perspectives.
 
-- **Roll-Up**: View total revenue by year
-- **Drill-Down**: Break yearly totals into quarters and months
-- **Slice**: Filter data by city
-- **Dice**: Analyze multiple filters (e.g., city + payment type)
-- **Pivot**: Switch rows/columns to view data from different angles
+### Power BI Reports
 
-### 📈 Power BI Reporting
+Power BI was used to create four interactive reports:
 
-Created 4 visual reports using Power BI:
+1. Matrix view comparing cities across months.
+2. Slicer-controlled view for filtering by city and payment method.
+3. Drill-down chart from year to month using the date hierarchy.
+4. Drill-through report for detailed order-level analysis by selected city.
 
-- **Matrix Report**: Monthly totals by city
-- **Slicer Report**: Filtered chart by city and payment method
-- **Drill-Down Report**: Navigate from year → quarter → month
-- **Drill-Through Report**: View detailed order data per city
+## Summary
 
----
+This repository demonstrates a complete business intelligence pipeline:
 
-## 🔚 Summary
+- Designing and implementing a snowflake-based data warehouse.
+- Extracting, transforming, and loading data using SSIS.
+- Creating an OLAP cube using SSAS.
+- Performing interactive multidimensional analysis in Excel and Power BI.
 
-This project demonstrates a complete Business Intelligence workflow:
-
-- Designing a warehouse schema
-- Building ETL pipelines
-- Creating historical dimensions
-- Developing an OLAP cube
-- Visualizing insights with Excel and Power BI
-
-The end-to-end flow enables efficient and insightful decision-making using real-world data modeling techniques.
+The solution supports reliable, scalable, and insightful reporting for business decision-making.
