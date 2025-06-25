@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>FoodDelivery_SSAS</Database>
+    <Server>localhost\SSAS_MULTI</Server>
+    <ConnectionString>Data Source=localhost\SSAS_MULTI;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>wiyeRL/AM92Al0DAqQzlgAUfgMM=5/2/2025 10:00:46 AM4/30/2025 11:56:33 AM</TimeStamp>
+        <ID>
+          <String>DS_FoodDelivery_DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>mX/B8jlEIK58702BmP/cQBYSBEo=4/30/2025 12:19:38 PM4/30/2025 12:08:55 PM</TimeStamp>
+        <ID>
+          <String>DSV_FoodDelivery_DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3nKM0E0Y/2vGt/EuRohW2UG44kk=5/2/2025 10:20:26 AM4/30/2025 12:19:37 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ZMANx8QKyYmHXDYcIP/zHFAd6qc=4/30/2025 3:09:30 PM4/30/2025 12:19:37 PM</TimeStamp>
+        <ID>
+          <String>Dim Delivery Person</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>QvGC1PM2EZZAV66drTTfVRcVAt0=4/30/2025 3:11:25 PM4/30/2025 12:19:38 PM</TimeStamp>
+        <ID>
+          <String>Dim Restaurant</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>1nsSfsDXhuH7IVXP9PlPTJpuXpw=4/30/2025 3:11:03 PM4/30/2025 12:19:38 PM</TimeStamp>
+        <ID>
+          <String>Dim Food</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ked3U0lByLX+hxo0QK+QVZ8bXjY=4/30/2025 3:05:52 PM4/30/2025 12:19:38 PM</TimeStamp>
+        <ID>
+          <String>Dim Payment Method</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>X5GpJq8SI3CHHNSZXqfGNulL3NA=5/2/2025 10:46:26 AM4/30/2025 12:19:38 PM</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>DA+BfsrB1fuGQtgQ0NttIW7QNdE=5/2/2025 10:43:29 AM4/30/2025 12:19:37 PM5si9vXAzziLxpxoU1Jq/AxqqpwY=4/30/2025 12:19:38 PM4/30/2025 12:19:37 PM</TimeStamp>
+        <ID>
+          <String>FoodDeliveryCube</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>3uZhv20Q8qa17fj5csSm5/LkFSw=4/30/2025 11:48:39 AM4/30/2025 11:48:38 AM</TimeStamp>
+      <ID>
+        <String>FoodDelivery_SSAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-05-02T05:16:34.193333Z</LastDeployed>
+</DeploymentSnapshot>
